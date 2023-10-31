@@ -1,10 +1,10 @@
 package com.rpsperera.automation.automate_web.commands;
 
+import com.rpsperera.automation.automate_common.command_base.MetaData;
+import com.rpsperera.automation.automate_common.command_base.RetryI;
+import com.rpsperera.automation.automate_common.enums.ElementIdentifier;
+import com.rpsperera.automation.automate_common.util.ExitHandlerFI;
 import com.rpsperera.automation.automate_web.util.WebDriverUtil;
-import com.rpsperera.automation.ratcore_common.command_base.MetaData;
-import com.rpsperera.automation.ratcore_common.command_base.RetryI;
-import com.rpsperera.automation.ratcore_common.enums.ElementIdentifier;
-import com.rpsperera.automation.ratcore_common.util.ExitHandlerFI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

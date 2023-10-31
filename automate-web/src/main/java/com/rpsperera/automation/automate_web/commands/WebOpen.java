@@ -1,7 +1,7 @@
 package com.rpsperera.automation.automate_web.commands;
 
-import com.rpsperera.automation.ratcore_common.command_base.Open;
-import com.rpsperera.automation.ratcore_common.util.Retry;
+import com.rpsperera.automation.automate_common.command_base.Open;
+import com.rpsperera.automation.automate_common.util.Retry;
 import org.aspectj.lang.annotation.Aspect;
 
 @Aspect

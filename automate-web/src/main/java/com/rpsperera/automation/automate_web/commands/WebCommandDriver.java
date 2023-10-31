@@ -1,9 +1,9 @@
 package com.rpsperera.automation.automate_web.commands;
 
+import com.rpsperera.automation.automate_common.enums.Browser;
+import com.rpsperera.automation.automate_common.enums.Command;
 import com.rpsperera.automation.automate_web.driver.DriverManager;
 import com.rpsperera.automation.automate_web.driver.WebDriverFactory;
-import com.rpsperera.automation.ratcore_common.enums.Browser;
-import com.rpsperera.automation.ratcore_common.enums.Command;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Objects;

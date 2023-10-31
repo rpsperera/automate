@@ -1,10 +1,10 @@
 package com.rpsperera.automation.automate_web;
 
+import com.rpsperera.automation.automate_common.enums.Browser;
+import com.rpsperera.automation.automate_common.enums.ElementIdentifier;
+import com.rpsperera.automation.automate_common.enums.Paradigm;
+import com.rpsperera.automation.automate_common.util.TestCase;
 import com.rpsperera.automation.automate_web.driver.WebDriverProvider;
-import com.rpsperera.automation.ratcore_common.enums.Browser;
-import com.rpsperera.automation.ratcore_common.enums.ElementIdentifier;
-import com.rpsperera.automation.ratcore_common.enums.Paradigm;
-import com.rpsperera.automation.ratcore_common.util.TestCase;
 
 @TestCase(name = "WEBTEST", paradigm = Paradigm.WEB)
 public class Main {

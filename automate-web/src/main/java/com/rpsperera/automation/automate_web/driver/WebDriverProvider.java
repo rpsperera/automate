@@ -1,13 +1,13 @@
 package com.rpsperera.automation.automate_web.driver;
 
+import com.rpsperera.automation.automate_common.enums.Browser;
+import com.rpsperera.automation.automate_common.enums.Command;
+import com.rpsperera.automation.automate_common.enums.Paradigm;
+import com.rpsperera.automation.automate_common.util.Log;
 import com.rpsperera.automation.automate_web.commands.WebClick;
 import com.rpsperera.automation.automate_web.commands.WebCommandDriver;
 import com.rpsperera.automation.automate_web.commands.WebOpen;
 import com.rpsperera.automation.automate_web.commands.WebType;
-import com.rpsperera.automation.ratcore_common.enums.Browser;
-import com.rpsperera.automation.ratcore_common.enums.Command;
-import com.rpsperera.automation.ratcore_common.enums.Paradigm;
-import com.rpsperera.automation.ratcore_common.util.Log;
 
 public class WebDriverProvider extends WebCommandDriver implements IWebDriverProvider {
 

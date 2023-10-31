@@ -1,7 +1,7 @@
 package com.rpsperera.automation.automate_web.driver;
 
-import com.rpsperera.automation.ratcore_common.util.Constants;
-import com.rpsperera.automation.ratcore_common.util.PropertyFileReader;
+import com.rpsperera.automation.automate_common.util.Constants;
+import com.rpsperera.automation.automate_common.util.PropertyFileReader;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;

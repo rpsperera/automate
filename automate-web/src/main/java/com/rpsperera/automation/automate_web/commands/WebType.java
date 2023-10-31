@@ -1,9 +1,9 @@
 package com.rpsperera.automation.automate_web.commands;
 
-import com.rpsperera.automation.ratcore_common.command_base.Type;
-import com.rpsperera.automation.ratcore_common.enums.Command;
-import com.rpsperera.automation.ratcore_common.enums.ElementIdentifier;
-import com.rpsperera.automation.ratcore_common.util.Retry;
+import com.rpsperera.automation.automate_common.command_base.Type;
+import com.rpsperera.automation.automate_common.enums.Command;
+import com.rpsperera.automation.automate_common.enums.ElementIdentifier;
+import com.rpsperera.automation.automate_common.util.Retry;
 
 public class WebType extends WCommandBase<WebType> implements Type<WebType> {
 

@@ -1,6 +1,6 @@
 package com.rpsperera.automation.automate_web.util;
 
-import com.rpsperera.automation.ratcore_common.enums.ElementIdentifier;
+import com.rpsperera.automation.automate_common.enums.ElementIdentifier;
 import org.openqa.selenium.By;
 
 public class WebDriverUtil {

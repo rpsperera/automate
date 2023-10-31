@@ -1,6 +1,6 @@
 package com.rpsperera.automation.automate_web.driver;
 
-import com.rpsperera.automation.ratcore_common.enums.Browser;
+import com.rpsperera.automation.automate_common.enums.Browser;
 
 public class WebDriverFactory {
 

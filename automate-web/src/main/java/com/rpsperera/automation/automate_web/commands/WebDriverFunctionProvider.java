@@ -1,7 +1,7 @@
 package com.rpsperera.automation.automate_web.commands;
 
 
-import com.rpsperera.automation.ratcore_common.enums.Command;
+import com.rpsperera.automation.automate_common.enums.Command;
 
 public class WebDriverFunctionProvider {
 
