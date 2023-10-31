@@ -31,7 +31,7 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>ratcore-common</artifactId>
+            <artifactId>automate-common</artifactId>
             <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>
