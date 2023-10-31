@@ -47,7 +47,7 @@
                     <aspectLibraries>
                         <aspectLibrary>
                             <groupId>${project.groupId}</groupId>
-                            <artifactId>ratcore-common</artifactId>
+                            <artifactId>automate-common</artifactId>
                         </aspectLibrary>
                     </aspectLibraries>
                 </configuration>
