@@ -41,11 +41,10 @@ public class RetryAdvice {
     @Around("retry()")
     public Object retryAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
 
-        String methodName = proceedingJoinPoint.getSignature().getName();
         getCommandRetries(proceedingJoinPoint);
         Retry annotation = ((MethodSignature) proceedingJoinPoint.getSignature()).getMethod().getAnnotation(Retry.class);
         boolean continueOnFail = annotation.continueOnFail();
-        boolean returnBoolean = annotation.returnBoolean();
+        boolean returnBoolean = annotation.returnsBoolean();
         int attempt = 1;
         Object proceed;
         while (attempt <= (this.retryCount + 1)) {
@@ -55,12 +54,14 @@ public class RetryAdvice {
                 return proceed;
             } catch (Exception e) {
                 LOGGER.error("Exception at attempt {} - {}", attempt - 1, e.getMessage());
-                if (attempt >= retryCount) {
+                if (attempt > retryCount) {
+                    // if the command returns a boolean value
                     if (returnBoolean) {
                         LOGGER.info("Max retry attempts reached.");
                         return false;
                     }
 
+                    // if continue on failure is set to true it would just continue to next command
                     if (continueOnFail) {
                         LOGGER.info("Continue On Fail :: Max retry attempts reached.");
                         LOGGER.info("Continuing to next command");
@@ -68,6 +69,8 @@ public class RetryAdvice {
                     }
                     LOGGER.info("Max retry attempts reached.Throwing Exception");
                     LOGGER.error(e.getMessage(), e);
+                    // max attempts reached and exit handler needs to called to
+                    // stop the continuation.
                     executeExistHandler(proceedingJoinPoint);
                     throw e;
                 }
@@ -97,6 +100,13 @@ public class RetryAdvice {
 
     }
 
+    /**
+     * This method will execute the exit handler.
+     *
+     * @param proceedingJoinPoint - current execution instance
+     * @throws NoSuchFieldException   - if the existHandler field is not available
+     * @throws IllegalAccessException - if the exitHandler field cannot be accessed.
+     */
     private void executeExistHandler(ProceedingJoinPoint proceedingJoinPoint) throws NoSuchFieldException, IllegalAccessException {
         Object instance = proceedingJoinPoint.getThis();
         Field exitHandler = instance.getClass().getField("exitHandler");

@@ -20,7 +20,7 @@
             <dependency>
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjrt</artifactId>
-                <version>1.9.7</version>
+                <version>${aspectj.runtime.version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
             <dependency>
@@ -51,12 +51,14 @@
                 <groupId>tech.grasshopper</groupId>
                 <artifactId>extentreports-cucumber7-adapter</artifactId>
                 <version>1.14.0</version>
+                <scope>test</scope>
             </dependency>
             <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
             <dependency>
                 <groupId>com.aventstack</groupId>
                 <artifactId>extentreports</artifactId>
                 <version>5.1.1</version>
+                <scope>test</scope>
             </dependency>
 
         </dependencies>
@@ -86,7 +88,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>aspectj-maven-plugin</artifactId>
-                <version>1.14.0</version>
+                <version>${aspectj.plugin.version}</version>
                 <configuration>
                     <complianceLevel>11</complianceLevel>
                     <source>${maven.compiler.source}</source>
@@ -116,6 +118,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <skip.assembly>true</skip.assembly>
         <aspectj.version>1.9.20.1</aspectj.version>
+        <aspectj.runtime.version>1.9.7</aspectj.runtime.version>
         <aspectj.plugin.version>1.14.0</aspectj.plugin.version>
     </properties>
 

@@ -1,9 +1,7 @@
 package com.rpsperera.automation.automate_web.driver;
 
 import com.rpsperera.automation.automate_common.enums.Browser;
-import com.rpsperera.automation.automate_web.commands.WebClick;
-import com.rpsperera.automation.automate_web.commands.WebOpen;
-import com.rpsperera.automation.automate_web.commands.WebType;
+import com.rpsperera.automation.automate_web.commands.*;
 
 public interface IWebDriverProvider {
 
@@ -14,4 +12,18 @@ public interface IWebDriverProvider {
     WebClick getClickCommand() throws Exception;
 
     WebType getTypeCommand() throws Exception;
+
+    WebCheckElementPresent getCheckElementPresentCommand() throws Exception;
+
+    WebDoubleClick getDoubleClickCommand() throws Exception;
+
+    WebGetObjectCount getObjectCountCommand() throws Exception;
+
+    WebGetText getTextCommand() throws Exception;
+
+    WebMouseMove getMouseMoveCommand() throws Exception;
+
+    WebRightClick getRightClickCommand() throws Exception;
+
+    WebSelectFrame getSelectFrameCommand() throws Exception;
 }

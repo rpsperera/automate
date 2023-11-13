@@ -15,6 +15,6 @@ public @interface Retry {
 
     boolean continueOnFail() default false;
 
-    boolean returnBoolean() default false;
+    boolean returnsBoolean() default false;
 
 }

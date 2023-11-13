@@ -1,23 +1,24 @@
 package com.rpsperera.automation.automate_web.commands;
 
-import com.rpsperera.automation.automate_common.command_base.Click;
+import com.rpsperera.automation.automate_common.command_base.RightClick;
 import com.rpsperera.automation.automate_common.enums.Command;
 import com.rpsperera.automation.automate_common.enums.ElementIdentifier;
 import com.rpsperera.automation.automate_common.exception.AutomateException;
 import com.rpsperera.automation.automate_common.util.ExceptionUtils;
 import com.rpsperera.automation.automate_common.util.Retry;
+import org.openqa.selenium.interactions.Actions;
 
-public class WebClick extends WCommandBase<WebClick> implements Click<WebClick> {
+public class WebRightClick extends WCommandBase<WebRightClick> implements RightClick<WebRightClick> {
 
-    @Override
     @Retry
-    public void click(ElementIdentifier elementIdentifier, String element) throws AutomateException {
+    @Override
+    public void rightClick(ElementIdentifier elementIdentifier, String element) throws AutomateException {
+
         try {
-            super.getElementIdentifier(elementIdentifier, element).click();
+            Actions action = new Actions(this.webDriver).contextClick(super.getElementIdentifier(elementIdentifier, element));
+            action.perform();
         } catch (Exception e) {
             ExceptionUtils.generateAndThrowCommandException(e, Command.CLICK);
         }
     }
-
-
 }

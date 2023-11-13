@@ -1,11 +1,15 @@
 package com.rpsperera.automation.automate_web.util;
 
 import com.rpsperera.automation.automate_common.enums.ElementIdentifier;
+import com.rpsperera.automation.automate_common.exception.AutomateException;
+import com.rpsperera.automation.automate_common.util.ExceptionUtils;
 import org.openqa.selenium.By;
+
+import static com.rpsperera.automation.automate_common.util.Constants.UNKNOWN_ELEMENT_IDENTIFIER;
 
 public class WebDriverUtil {
 
-    public static By getWebIdentifierElement(ElementIdentifier identifier, String element) throws Exception {
+    public static By getWebIdentifierElement(ElementIdentifier identifier, String element) throws AutomateException {
         switch (identifier) {
             case XPATH:
                 return By.xpath(element);
@@ -24,8 +28,9 @@ public class WebDriverUtil {
             case PARTIAL_LINK_TEXT:
                 return By.partialLinkText(element);
             default:
-                throw new Exception("Unknown Element Identifier type");
+                ExceptionUtils.generateAndThrowGenericException(UNKNOWN_ELEMENT_IDENTIFIER);
         }
+        return null;
     }
 
 

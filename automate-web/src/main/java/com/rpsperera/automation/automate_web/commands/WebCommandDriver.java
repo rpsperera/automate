@@ -39,6 +39,34 @@ public abstract class WebCommandDriver implements AutoCloseable {
         return WebDriverFunctionProvider.provide(Command.TYPE, WebType.class).withDriver(this.webDriver).exitHandler(this::close);
     }
 
+    protected WebCheckElementPresent checkElementPresent() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.CHECK_ELEMENT_PRESENT, WebCheckElementPresent.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+
+    protected WebDoubleClick doubleClick() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.DOUBLE_CLICK, WebDoubleClick.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+
+    protected WebGetObjectCount getObjectCount() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.GET_OBJECT_COUNT, WebGetObjectCount.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+
+    protected WebGetText getText() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.GET_TEXT, WebGetText.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+
+    protected WebMouseMove mouseMove() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.MOUSE_MOVE, WebMouseMove.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+
+    protected WebRightClick rightClick() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.RIGHT_CLICK, WebRightClick.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+
+    protected WebSelectFrame selectFrame() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.SELECT_FRAME, WebSelectFrame.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+
     @Override
     public void close() {
         if (Objects.nonNull(this.driverManager)) {

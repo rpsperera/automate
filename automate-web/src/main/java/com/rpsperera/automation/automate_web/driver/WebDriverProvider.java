@@ -4,10 +4,7 @@ import com.rpsperera.automation.automate_common.enums.Browser;
 import com.rpsperera.automation.automate_common.enums.Command;
 import com.rpsperera.automation.automate_common.enums.Paradigm;
 import com.rpsperera.automation.automate_common.util.Log;
-import com.rpsperera.automation.automate_web.commands.WebClick;
-import com.rpsperera.automation.automate_web.commands.WebCommandDriver;
-import com.rpsperera.automation.automate_web.commands.WebOpen;
-import com.rpsperera.automation.automate_web.commands.WebType;
+import com.rpsperera.automation.automate_web.commands.*;
 
 public class WebDriverProvider extends WebCommandDriver implements IWebDriverProvider {
 
@@ -33,6 +30,48 @@ public class WebDriverProvider extends WebCommandDriver implements IWebDriverPro
     @Log(command = Command.CLICK, paradigm = Paradigm.WEB)
     public WebClick getClickCommand() throws Exception {
         return super.click();
+    }
+
+    @Override
+    @Log(command = Command.CHECK_ELEMENT_PRESENT, paradigm = Paradigm.WEB)
+    public WebCheckElementPresent getCheckElementPresentCommand() throws Exception {
+        return super.checkElementPresent();
+    }
+
+    @Override
+    @Log(command = Command.DOUBLE_CLICK, paradigm = Paradigm.WEB)
+    public WebDoubleClick getDoubleClickCommand() throws Exception {
+        return super.doubleClick();
+    }
+
+    @Override
+    @Log(command = Command.GET_OBJECT_COUNT, paradigm = Paradigm.WEB)
+    public WebGetObjectCount getObjectCountCommand() throws Exception {
+        return super.getObjectCount();
+    }
+
+    @Override
+    @Log(command = Command.GET_TEXT, paradigm = Paradigm.WEB)
+    public WebGetText getTextCommand() throws Exception {
+        return super.getText();
+    }
+
+    @Override
+    @Log(command = Command.MOUSE_MOVE, paradigm = Paradigm.WEB)
+    public WebMouseMove getMouseMoveCommand() throws Exception {
+        return super.mouseMove();
+    }
+
+    @Override
+    @Log(command = Command.RIGHT_CLICK, paradigm = Paradigm.WEB)
+    public WebRightClick getRightClickCommand() throws Exception {
+        return super.rightClick();
+    }
+
+    @Override
+    @Log(command = Command.SELECT_FRAME, paradigm = Paradigm.WEB)
+    public WebSelectFrame getSelectFrameCommand() throws Exception {
+        return super.selectFrame();
     }
 
     @Override

@@ -6,9 +6,17 @@ import com.rpsperera.automation.automate_common.exception.InvalidParadigmExcepti
 
 import static com.rpsperera.automation.automate_common.util.Constants.COMMAND_NOT_IMPLEMENTED_FOR_CURRENT_PARADIGM;
 
-public interface Click<T> extends Command<T> {
+public interface SelectFrame<T> extends Command<T> {
 
-    default void click(ElementIdentifier elementIdentifier, String element) throws AutomateException {
+    default void selectFrame(ElementIdentifier elementIdentifier, String element) throws AutomateException {
+        throw new InvalidParadigmException(COMMAND_NOT_IMPLEMENTED_FOR_CURRENT_PARADIGM);
+    }
+
+    default void selectFrameById(int id) throws AutomateException {
+        throw new InvalidParadigmException(COMMAND_NOT_IMPLEMENTED_FOR_CURRENT_PARADIGM);
+    }
+
+    default void selectFrameByNameOrId(String nameOrId) throws AutomateException {
         throw new InvalidParadigmException(COMMAND_NOT_IMPLEMENTED_FOR_CURRENT_PARADIGM);
     }
 }
