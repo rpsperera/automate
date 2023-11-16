@@ -26,4 +26,5 @@ public interface IWebDriverProvider {
     WebRightClick getRightClickCommand() throws Exception;
 
     WebSelectFrame getSelectFrameCommand() throws Exception;
+    WebSelect getSelectCommand() throws Exception;
 }

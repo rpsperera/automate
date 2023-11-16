@@ -67,6 +67,9 @@ public abstract class WebCommandDriver implements AutoCloseable {
         return WebDriverFunctionProvider.provide(Command.SELECT_FRAME, WebSelectFrame.class).withDriver(this.webDriver).exitHandler(this::close);
     }
 
+    protected WebSelect select() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.SELECT, WebSelect.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
     @Override
     public void close() {
         if (Objects.nonNull(this.driverManager)) {

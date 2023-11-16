@@ -31,6 +31,8 @@ public class WebDriverFunctionProvider {
                 return tClass.cast(new WebGetObjectCount());
             case CHECK_ELEMENT_PRESENT:
                 return tClass.cast(new WebCheckElementPresent());
+            case SELECT:
+                return tClass.cast(new WebSelect());
             default:
                 throw new NoSuchMethodException();
         }

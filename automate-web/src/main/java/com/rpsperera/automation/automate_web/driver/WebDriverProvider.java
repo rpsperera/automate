@@ -73,6 +73,11 @@ public class WebDriverProvider extends WebCommandDriver implements IWebDriverPro
     public WebSelectFrame getSelectFrameCommand() throws Exception {
         return super.selectFrame();
     }
+    @Override
+    @Log(command = Command.SELECT, paradigm = Paradigm.WEB)
+    public WebSelect getSelectCommand() throws Exception {
+        return super.select();
+    }
 
     @Override
     @Log(command = Command.TYPE, paradigm = Paradigm.WEB)
