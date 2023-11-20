@@ -13,7 +13,9 @@ public enum Command {
     TYPE("type"),
     SELECT("select"),
     CHECK_ELEMENT_PRESENT("checkElementPresent"),
-    GET("get");
+    GET("get"),
+
+    IS_SELECTED("IsSelected");
 
     Command(String command) {
         this.command = command;

@@ -28,4 +28,7 @@ public interface IWebDriverProvider {
     WebSelectFrame getSelectFrameCommand() throws Exception;
 
     WebSelect getSelectCommand() throws Exception;
+
+    WebIsSelected getISSelectedCommand() throws Exception;
+
 }
