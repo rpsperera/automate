@@ -5,9 +5,7 @@ import com.rpsperera.automation.automate_common.enums.Command;
 import com.rpsperera.automation.automate_common.exception.AutomateException;
 import com.rpsperera.automation.automate_common.util.ExceptionUtils;
 import com.rpsperera.automation.automate_common.util.Retry;
-import org.aspectj.lang.annotation.Aspect;
 
-@Aspect
 public class WebOpen extends WCommandBase<WebOpen> implements Open<WebOpen> {
     @Override
     @Retry
