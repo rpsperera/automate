@@ -32,4 +32,5 @@ public interface IWebDriverProvider {
     WebIsSelected getISSelectedCommand() throws Exception;
 
     WebIsEnabled getISEnabledCommand() throws Exception;
+
 }
