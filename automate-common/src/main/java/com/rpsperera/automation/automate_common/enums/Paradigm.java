@@ -2,7 +2,8 @@ package com.rpsperera.automation.automate_common.enums;
 
 public enum Paradigm {
 
-    WEB("web");
+    WEB("web"),
+    API("api");
 
     Paradigm(String paradigm) {
         this.paradigm = paradigm;
