@@ -13,6 +13,7 @@ public enum Command {
     TYPE("type"),
     SELECT("select"),
     CHECK_ELEMENT_PRESENT("checkElementPresent"),
+    GET_TITLE("getTitle"),
     GET("get");
 
     Command(String command) {
