@@ -75,6 +75,9 @@ public abstract class WebCommandFacade implements AutoCloseable {
         return WebDriverFunctionProvider.provide(Command.IS_SELECTED, WebIsSelected.class).withDriver(this.webDriver).exitHandler(this::close);
     }
 
+    protected WebIsEnabled isEnabled() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.IS_ENABLED, WebIsEnabled.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
     @Override
     public void close() {
         if (Objects.nonNull(this.driverManager)) {
