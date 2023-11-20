@@ -12,7 +12,8 @@ public enum Command {
     DOUBLE_CLICK("doubleClick"),
     TYPE("type"),
     SELECT("select"),
-    CHECK_ELEMENT_PRESENT("checkElementPresent");
+    CHECK_ELEMENT_PRESENT("checkElementPresent"),
+    GET("get");
 
     Command(String command) {
         this.command = command;

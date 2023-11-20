@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.Objects;
 
-public abstract class WebCommandDriver implements AutoCloseable {
+public abstract class WebCommandFacade implements AutoCloseable {
 
     protected DriverManager driverManager = null;
     protected WebDriver webDriver = null;
@@ -70,6 +70,7 @@ public abstract class WebCommandDriver implements AutoCloseable {
     protected WebSelect select() throws Exception {
         return WebDriverFunctionProvider.provide(Command.SELECT, WebSelect.class).withDriver(this.webDriver).exitHandler(this::close);
     }
+
     @Override
     public void close() {
         if (Objects.nonNull(this.driverManager)) {

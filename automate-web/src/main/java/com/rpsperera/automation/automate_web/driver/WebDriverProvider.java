@@ -6,7 +6,7 @@ import com.rpsperera.automation.automate_common.enums.Paradigm;
 import com.rpsperera.automation.automate_common.util.Log;
 import com.rpsperera.automation.automate_web.commands.*;
 
-public class WebDriverProvider extends WebCommandDriver implements IWebDriverProvider {
+public class WebDriverProvider extends WebCommandFacade implements IWebDriverProvider {
 
     public static WebDriverProvider getInstance() {
         WebDriverProvider webDriverProvider = new WebDriverProvider();
@@ -73,6 +73,12 @@ public class WebDriverProvider extends WebCommandDriver implements IWebDriverPro
     public WebSelectFrame getSelectFrameCommand() throws Exception {
         return super.selectFrame();
     }
+    @Override
+    @Log(command = Command.SELECT, paradigm = Paradigm.WEB)
+    public WebSelect getSelectCommand() throws Exception {
+        return super.select();
+    }
+
     @Override
     @Log(command = Command.SELECT, paradigm = Paradigm.WEB)
     public WebSelect getSelectCommand() throws Exception {
