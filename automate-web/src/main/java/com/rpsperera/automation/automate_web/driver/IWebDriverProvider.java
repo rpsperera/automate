@@ -29,10 +29,12 @@ public interface IWebDriverProvider {
 
     WebSelect getSelectCommand() throws Exception;
 
-    WebIsSelected getISSelectedCommand() throws Exception;
-
-    WebIsEnabled getISEnabledCommand() throws Exception;
+    WebIsSelected getIsSelectedCommand() throws Exception;
     
     WebSelectPopup getSelectPopupCommand() throws Exception;
+    
+    WebIsEnabled getIsEnabledCommand() throws Exception;
+
+    WebIsDisplayed getIsDisplayedCommand() throws Exception;
 
 }
