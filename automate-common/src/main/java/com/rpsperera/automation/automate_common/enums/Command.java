@@ -1,6 +1,5 @@
 package com.rpsperera.automation.automate_common.enums;
 
-import com.rpsperera.automation.automate_common.command_base.TakesScreenshot;
 
 public enum Command {
 
