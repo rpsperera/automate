@@ -10,7 +10,7 @@ public class WebSelectPopup extends WCommandBase<WebSelectPopup> implements Sele
 	@Retry
     @Override
     public void selectPopup() throws AutomateException {
-        try {;
+        try {
             this.webDriver.switchTo().alert();
         } catch (Exception e) {
             ExceptionUtils.generateAndThrowCommandException(e, Command.SELECT_POPUP);
