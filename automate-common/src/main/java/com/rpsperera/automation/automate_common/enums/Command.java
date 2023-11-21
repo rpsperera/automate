@@ -17,7 +17,8 @@ public enum Command {
     IS_SELECTED("IsSelected"),
     IS_ENABLED("IsEnabled"),
 	SELECT_POPUP("selectPopup"),
-    IS_DISPLAYED("IsDisplayed");
+    IS_DISPLAYED("IsDisplayed"),
+    GET_ATTRIBUTE("getAttribute");
 
     Command(String command) {
         this.command = command;

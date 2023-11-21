@@ -37,4 +37,6 @@ public interface IWebDriverProvider {
 
     WebIsDisplayed getIsDisplayedCommand() throws Exception;
 
+    WebGetAttribute getAttributeCommand() throws Exception;
+
 }

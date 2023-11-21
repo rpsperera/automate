@@ -42,6 +42,8 @@ public class WebDriverFunctionProvider extends InstanceProvider {
                 return tClass.cast(new WebSelectPopup());
             case IS_DISPLAYED:
                 return tClass.cast(new WebIsDisplayed());
+            case GET_ATTRIBUTE:
+                return tClass.cast(new WebGetAttribute());
             default:
                 throw new NoSuchMethodException();
         }
