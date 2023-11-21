@@ -33,4 +33,6 @@ public interface IWebDriverProvider {
 
     WebIsEnabled getISEnabledCommand() throws Exception;
 
+    WebGetAttribute getAttributeCommand() throws Exception;
+
 }
