@@ -81,6 +81,24 @@ public class WebDriverProvider extends WebCommandFacade implements IWebDriverPro
     }
 
     @Override
+    @Log(command = Command.IS_SELECTED, paradigm = Paradigm.WEB)
+    public WebIsSelected getIsSelectedCommand() throws Exception {
+        return super.isSelected();
+    }
+
+    @Override
+    @Log(command = Command.IS_ENABLED, paradigm = Paradigm.WEB)
+    public WebIsEnabled getIsEnabledCommand() throws Exception {
+        return super.isEnabled();
+    }
+
+    @Override
+    @Log(command = Command.IS_DISPLAYED, paradigm = Paradigm.WEB)
+    public WebIsDisplayed getIsDisplayedCommand() throws Exception {
+        return super.isDisplayed();
+    }
+
+    @Override
     @Log(command = Command.TYPE, paradigm = Paradigm.WEB)
     public WebType getTypeCommand() throws Exception {
         return super.type();

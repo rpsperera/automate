@@ -34,6 +34,12 @@ public class WebDriverFunctionProvider extends InstanceProvider {
                 return tClass.cast(new WebCheckElementPresent());
             case SELECT:
                 return tClass.cast(new WebSelect());
+            case IS_SELECTED:
+                return tClass.cast(new WebIsSelected());
+            case IS_ENABLED:
+                return tClass.cast(new WebIsEnabled());
+            case IS_DISPLAYED:
+                return tClass.cast(new WebIsDisplayed());
             default:
                 throw new NoSuchMethodException();
         }
