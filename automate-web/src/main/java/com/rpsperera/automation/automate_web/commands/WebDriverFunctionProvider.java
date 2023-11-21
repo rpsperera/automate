@@ -40,6 +40,8 @@ public class WebDriverFunctionProvider extends InstanceProvider {
                 return tClass.cast(new WebIsEnabled());
             case IS_DISPLAYED:
                 return tClass.cast(new WebIsDisplayed());
+            case GET_TITLE:
+                return tClass.cast(new WebGetTitle());
             default:
                 throw new NoSuchMethodException();
         }

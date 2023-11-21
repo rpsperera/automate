@@ -103,4 +103,9 @@ public class WebDriverProvider extends WebCommandFacade implements IWebDriverPro
     public WebType getTypeCommand() throws Exception {
         return super.type();
     }
+    @Override
+    @Log(command = Command.GET_TITLE, paradigm = Paradigm.WEB)
+    public WebGetTitle getTitleCommand() throws Exception {
+        return super.getTitle();
+    }
 }
