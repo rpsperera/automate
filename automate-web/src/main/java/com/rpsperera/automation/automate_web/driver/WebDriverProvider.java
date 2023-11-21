@@ -93,6 +93,12 @@ public class WebDriverProvider extends WebCommandFacade implements IWebDriverPro
     }
 
     @Override
+    @Log(command = Command.TAKE_SCREENSHOT, paradigm = Paradigm.WEB)
+    public WebTakeScreenShot getISTakeScreenShotCommand() throws Exception {
+        return super.takesScreenshot();
+    }
+
+    @Override
     @Log(command = Command.IS_DISPLAYED, paradigm = Paradigm.WEB)
     public WebIsDisplayed getIsDisplayedCommand() throws Exception {
         return super.isDisplayed();
@@ -107,5 +113,16 @@ public class WebDriverProvider extends WebCommandFacade implements IWebDriverPro
     @Log(command = Command.GET_TITLE, paradigm = Paradigm.WEB)
     public WebGetTitle getTitleCommand() throws Exception {
         return super.getTitle();
+    }
+    @Override
+    @Log(command = Command.SELECT_POPUP, paradigm = Paradigm.WEB)
+    public WebSelectPopup getSelectPopupCommand() throws Exception {
+        return super.selectPopup();
+    }
+
+    @Override
+    @Log(command = Command.GET_ATTRIBUTE, paradigm = Paradigm.WEB)
+    public WebGetAttribute getAttributeCommand() throws Exception {
+        return super.getAttribute();
     }
 }

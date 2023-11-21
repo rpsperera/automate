@@ -15,6 +15,9 @@ public enum Command {
     CHECK_ELEMENT_PRESENT("checkElementPresent"),
     GET_TITLE("getTitle"),
     GET("get"),
+    TAKE_SCREENSHOT("TakesScreenshot"),
+    SELECT_POPUP("selectPopup"),
+    GET_ATTRIBUTE("getAttribute"),
     IS_SELECTED("isSelected"),
     IS_ENABLED("isEnabled"),
     IS_DISPLAYED("isDisplayed");
