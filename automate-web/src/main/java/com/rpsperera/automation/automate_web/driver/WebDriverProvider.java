@@ -103,4 +103,9 @@ public class WebDriverProvider extends WebCommandFacade implements IWebDriverPro
     public WebType getTypeCommand() throws Exception {
         return super.type();
     }
+    @Override
+    @Log(command = Command.SELECT_POPUP, paradigm = Paradigm.WEB)
+    public WebSelectPopup getSelectPopupCommand() throws Exception {
+        return super.selectPopup();
+    }
 }

@@ -16,6 +16,7 @@ public enum Command {
     GET("get"),
     IS_SELECTED("IsSelected"),
     IS_ENABLED("IsEnabled"),
+	SELECT_POPUP("selectPopup"),
     IS_DISPLAYED("IsDisplayed");
 
     Command(String command) {

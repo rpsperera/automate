@@ -88,4 +88,7 @@ public abstract class WebCommandFacade implements AutoCloseable {
             this.driverManager.quitDriver();
         }
     }
+    protected WebSelectPopup selectPopup() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.SELECT_POPUP, WebSelectPopup.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
 }
