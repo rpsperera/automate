@@ -33,6 +33,6 @@ public interface IWebDriverProvider {
 
     WebIsEnabled getISEnabledCommand() throws Exception;
 
-    WebIsScreenShot getISTakeScreenShotCommand() throws Exception;
+    WebTakeScreenShot getISTakeScreenShotCommand() throws Exception;
 
 }

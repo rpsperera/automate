@@ -15,7 +15,7 @@ import java.nio.file.Files;
  *
  * @author Dilshan Boteju
  */
-public class WebIsScreenShot extends WCommandBase<WebIsScreenShot> implements TakesScreenshot<WebIsScreenShot> {
+public class WebTakeScreenShot extends WCommandBase<WebTakeScreenShot> implements TakesScreenshot<WebTakeScreenShot> {
 
     protected WebDriver webDriver;
 

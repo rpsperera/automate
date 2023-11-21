@@ -79,8 +79,8 @@ public abstract class WebCommandFacade implements AutoCloseable {
         return WebDriverFunctionProvider.provide(Command.IS_ENABLED, WebIsEnabled.class).withDriver(this.webDriver).exitHandler(this::close);
     }
 
-    protected WebIsScreenShot takesScreenshot() throws Exception {
-        return WebDriverFunctionProvider.provide(Command.TAKE_SCREENSHOT, WebIsScreenShot.class).withDriver(this.webDriver).exitHandler(this::close);
+    protected WebTakeScreenShot takesScreenshot() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.TAKE_SCREENSHOT, WebTakeScreenShot.class).withDriver(this.webDriver).exitHandler(this::close);
     }
     @Override
     public void close() {

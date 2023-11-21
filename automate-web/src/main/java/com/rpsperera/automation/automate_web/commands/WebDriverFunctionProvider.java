@@ -39,7 +39,7 @@ public class WebDriverFunctionProvider extends InstanceProvider {
             case IS_ENABLED:
                 return tClass.cast(new WebIsEnabled());
             case TAKE_SCREENSHOT:
-                return tClass.cast(new WebIsScreenShot());
+                return tClass.cast(new WebTakeScreenShot());
             default:
                 throw new NoSuchMethodException();
         }

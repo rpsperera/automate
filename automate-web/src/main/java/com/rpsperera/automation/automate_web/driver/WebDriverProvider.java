@@ -94,7 +94,7 @@ public class WebDriverProvider extends WebCommandFacade implements IWebDriverPro
 
     @Override
     @Log(command = Command.TAKE_SCREENSHOT, paradigm = Paradigm.WEB)
-    public WebIsScreenShot getISTakeScreenShotCommand() throws Exception {
+    public WebTakeScreenShot getISTakeScreenShotCommand() throws Exception {
         return super.takesScreenshot();
     }
 
