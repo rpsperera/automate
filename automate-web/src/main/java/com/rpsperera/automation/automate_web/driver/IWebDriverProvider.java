@@ -39,4 +39,6 @@ public interface IWebDriverProvider {
 
     WebGetAttribute getAttributeCommand() throws Exception;
 
+    WebTakeScreenShot getISTakeScreenShotCommand() throws Exception;
+
 }

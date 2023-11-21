@@ -16,7 +16,8 @@ public enum Command {
     GET("get"),
     IS_SELECTED("IsSelected"),
     IS_ENABLED("IsEnabled"),
-	SELECT_POPUP("selectPopup"),
+    TAKE_SCREENSHOT("TakesScreenshot"),
+    SELECT_POPUP("selectPopup"),
     IS_DISPLAYED("IsDisplayed"),
     GET_ATTRIBUTE("getAttribute");
 
