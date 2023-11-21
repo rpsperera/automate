@@ -1,9 +1,10 @@
 package com.rpsperera.automation.automate_web.commands;
 
 
+import com.rpsperera.automation.automate_common.command_base.InstanceProvider;
 import com.rpsperera.automation.automate_common.enums.Command;
 
-public class WebDriverFunctionProvider {
+public class WebDriverFunctionProvider extends InstanceProvider {
 
     private WebDriverFunctionProvider() {
 
@@ -31,6 +32,8 @@ public class WebDriverFunctionProvider {
                 return tClass.cast(new WebGetObjectCount());
             case CHECK_ELEMENT_PRESENT:
                 return tClass.cast(new WebCheckElementPresent());
+            case SELECT:
+                return tClass.cast(new WebSelect());
             default:
                 throw new NoSuchMethodException();
         }

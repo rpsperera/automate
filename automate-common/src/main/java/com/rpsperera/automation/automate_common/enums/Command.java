@@ -11,8 +11,9 @@ public enum Command {
     GET_OBJECT_COUNT("getObjectCount"),
     DOUBLE_CLICK("doubleClick"),
     TYPE("type"),
-
-    CHECK_ELEMENT_PRESENT("checkElementPresent");
+    SELECT("select"),
+    CHECK_ELEMENT_PRESENT("checkElementPresent"),
+    GET("get");
 
     Command(String command) {
         this.command = command;
