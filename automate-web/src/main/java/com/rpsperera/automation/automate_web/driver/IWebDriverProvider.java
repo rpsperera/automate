@@ -29,9 +29,15 @@ public interface IWebDriverProvider {
 
     WebSelect getSelectCommand() throws Exception;
 
-    WebIsSelected getISSelectedCommand() throws Exception;
+    WebIsSelected getIsSelectedCommand() throws Exception;
+    
+    WebSelectPopup getSelectPopupCommand() throws Exception;
+    
+    WebIsEnabled getIsEnabledCommand() throws Exception;
 
-    WebIsEnabled getISEnabledCommand() throws Exception;
+    WebIsDisplayed getIsDisplayedCommand() throws Exception;
+
+    WebGetAttribute getAttributeCommand() throws Exception;
 
     WebTakeScreenShot getISTakeScreenShotCommand() throws Exception;
 

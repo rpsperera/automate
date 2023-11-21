@@ -82,13 +82,13 @@ public class WebDriverProvider extends WebCommandFacade implements IWebDriverPro
 
     @Override
     @Log(command = Command.IS_SELECTED, paradigm = Paradigm.WEB)
-    public WebIsSelected getISSelectedCommand() throws Exception {
+    public WebIsSelected getIsSelectedCommand() throws Exception {
         return super.isSelected();
     }
 
     @Override
     @Log(command = Command.IS_ENABLED, paradigm = Paradigm.WEB)
-    public WebIsEnabled getISEnabledCommand() throws Exception {
+    public WebIsEnabled getIsEnabledCommand() throws Exception {
         return super.isEnabled();
     }
 
@@ -99,8 +99,25 @@ public class WebDriverProvider extends WebCommandFacade implements IWebDriverPro
     }
 
     @Override
+    @Log(command = Command.IS_DISPLAYED, paradigm = Paradigm.WEB)
+    public WebIsDisplayed getIsDisplayedCommand() throws Exception {
+        return super.isDisplayed();
+    }
+
+    @Override
     @Log(command = Command.TYPE, paradigm = Paradigm.WEB)
     public WebType getTypeCommand() throws Exception {
         return super.type();
+    }
+    @Override
+    @Log(command = Command.SELECT_POPUP, paradigm = Paradigm.WEB)
+    public WebSelectPopup getSelectPopupCommand() throws Exception {
+        return super.selectPopup();
+    }
+
+    @Override
+    @Log(command = Command.GET_ATTRIBUTE, paradigm = Paradigm.WEB)
+    public WebGetAttribute getAttributeCommand() throws Exception {
+        return super.getAttribute();
     }
 }

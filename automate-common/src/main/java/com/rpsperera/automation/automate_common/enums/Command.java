@@ -1,6 +1,5 @@
 package com.rpsperera.automation.automate_common.enums;
 
-
 public enum Command {
 
     OPEN("open"),
@@ -17,7 +16,10 @@ public enum Command {
     GET("get"),
     IS_SELECTED("IsSelected"),
     IS_ENABLED("IsEnabled"),
-    TAKE_SCREENSHOT("TakesScreenshot");
+    TAKE_SCREENSHOT("TakesScreenshot"),
+    SELECT_POPUP("selectPopup"),
+    IS_DISPLAYED("IsDisplayed"),
+    GET_ATTRIBUTE("getAttribute");
 
     Command(String command) {
         this.command = command;
