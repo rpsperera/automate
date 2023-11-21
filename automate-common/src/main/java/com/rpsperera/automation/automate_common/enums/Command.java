@@ -15,9 +15,9 @@ public enum Command {
     CHECK_ELEMENT_PRESENT("checkElementPresent"),
     GET_TITLE("getTitle"),
     GET("get"),
-    IS_SELECTED("IsSelected"),
-    IS_ENABLED("IsEnabled"),
-    IS_DISPLAYED("IsDisplayed");
+    IS_SELECTED("isSelected"),
+    IS_ENABLED("isEnabled"),
+    IS_DISPLAYED("isDisplayed");
 
     Command(String command) {
         this.command = command;
