@@ -1,5 +1,7 @@
 package com.rpsperera.automation.automate_common.enums;
 
+import com.rpsperera.automation.automate_common.command_base.TakesScreenshot;
+
 public enum Command {
 
     OPEN("open"),
@@ -15,7 +17,8 @@ public enum Command {
     CHECK_ELEMENT_PRESENT("checkElementPresent"),
     GET("get"),
     IS_SELECTED("IsSelected"),
-    IS_ENABLED("IsEnabled");
+    IS_ENABLED("IsEnabled"),
+    TAKE_SCREENSHOT("TakesScreenshot");
 
     Command(String command) {
         this.command = command;
