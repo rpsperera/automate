@@ -48,6 +48,10 @@ public class WebDriverFunctionProvider extends InstanceProvider {
                 return tClass.cast(new WebGetTitle());
             case GET_ATTRIBUTE:
                 return tClass.cast(new WebGetAttribute());
+            case WINDOW_HANDLE:
+            case WINDOW_HANDLES:
+            case SWITCH_TO_WINDOW:
+                return tClass.cast(new WebSelectWindow());
 
             default:
                 throw new NoSuchMethodException();

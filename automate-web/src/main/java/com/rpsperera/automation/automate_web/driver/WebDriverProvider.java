@@ -125,4 +125,21 @@ public class WebDriverProvider extends WebCommandFacade implements IWebDriverPro
     public WebGetAttribute getAttributeCommand() throws Exception {
         return super.getAttribute();
     }
+    @Override
+    @Log(command = Command.WINDOW_HANDLE, paradigm = Paradigm.WEB)
+    public WebSelectWindow getWindowHandle() throws Exception {
+        return super.getWindowHandle();
+    }
+
+    @Override
+    @Log(command = Command.WINDOW_HANDLES, paradigm = Paradigm.WEB)
+    public WebSelectWindow getWindowHandles() throws Exception {
+        return super.getWindowHandles();
+    }
+
+    @Override
+    @Log(command = Command.SWITCH_TO_WINDOW, paradigm = Paradigm.WEB)
+    public WebSelectWindow switchToWindow() throws Exception {
+        return super.switchToWindow();
+    }
 }
