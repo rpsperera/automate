@@ -1,5 +1,6 @@
 package com.rpsperera.automation.automate_web.commands;
 
+import com.rpsperera.automation.automate_common.command_base.SelectWindow;
 import com.rpsperera.automation.automate_common.enums.Browser;
 import com.rpsperera.automation.automate_common.enums.Command;
 import com.rpsperera.automation.automate_web.driver.DriverManager;
@@ -93,6 +94,19 @@ public abstract class WebCommandFacade implements AutoCloseable {
     protected WebGetTitle getTitle() throws Exception {
         return WebDriverFunctionProvider.provide(Command.GET_TITLE, WebGetTitle.class).withDriver(this.webDriver).exitHandler(this::close);
     }
+
+    protected WebSelectWindow getWindowHandle() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.WINDOW_HANDLE, WebSelectWindow.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+
+    protected WebSelectWindow getWindowHandles() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.WINDOW_HANDLES, WebSelectWindow.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+
+    protected WebSelectWindow switchToWindow() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.SWITCH_TO_WINDOW, WebSelectWindow.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+
     @Override
     public void close() {
         if (Objects.nonNull(this.driverManager)) {

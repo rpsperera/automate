@@ -20,7 +20,10 @@ public enum Command {
     GET_ATTRIBUTE("getAttribute"),
     IS_SELECTED("isSelected"),
     IS_ENABLED("isEnabled"),
-    IS_DISPLAYED("isDisplayed");
+    IS_DISPLAYED("isDisplayed"),
+    WINDOW_HANDLE("windowHandle"),
+    WINDOW_HANDLES("windowHandles"),
+    SWITCH_TO_WINDOW("switchTowindow");
 
     Command(String command) {
         this.command = command;
