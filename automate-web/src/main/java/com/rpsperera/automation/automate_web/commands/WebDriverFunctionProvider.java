@@ -39,7 +39,7 @@ public class WebDriverFunctionProvider extends InstanceProvider {
             case IS_ENABLED:
                 return tClass.cast(new WebIsEnabled());
             case TAKE_SCREENSHOT:
-                return tClass.cast(new WebTakeScreenShot());
+                return tClass.cast(new WebScreenCapture());
             case SELECT_POPUP:
                 return tClass.cast(new WebSelectPopup());
             case IS_DISPLAYED:

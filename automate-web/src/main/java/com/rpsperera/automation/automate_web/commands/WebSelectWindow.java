@@ -41,13 +41,12 @@ public class WebSelectWindow extends WCommandBase<WebSelectWindow> implements Se
 
     @Retry
     @Override
-    public WebDriver switchToWindow(String window) throws AutomateException {
+    public void switchToWindow(String window) throws AutomateException {
         try {
-            return this.webDriver.switchTo().window(window);
+            this.webDriver.switchTo().window(window);
         } catch (Exception e) {
             ExceptionUtils.generateAndThrowCommandException(e, Command.SWITCH_TO_WINDOW);
         }
 
-        return null;
     }
 }

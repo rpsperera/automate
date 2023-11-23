@@ -23,7 +23,7 @@ public enum Command {
     IS_DISPLAYED("isDisplayed"),
     WINDOW_HANDLE("windowHandle"),
     WINDOW_HANDLES("windowHandles"),
-    SWITCH_TO_WINDOW("switchTowindow");
+    SWITCH_TO_WINDOW("switchToWindow");
 
     Command(String command) {
         this.command = command;

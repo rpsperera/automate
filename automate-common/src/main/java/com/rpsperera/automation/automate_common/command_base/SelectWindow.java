@@ -18,7 +18,7 @@ public interface SelectWindow<T> extends Command<T> {
         throw new InvalidParadigmException(COMMAND_NOT_IMPLEMENTED_FOR_CURRENT_PARADIGM);
     }
 
-    default WebDriver switchToWindow(String window) throws AutomateException {
+    default void switchToWindow(String window) throws AutomateException {
         throw new InvalidParadigmException(COMMAND_NOT_IMPLEMENTED_FOR_CURRENT_PARADIGM);
     }
 }

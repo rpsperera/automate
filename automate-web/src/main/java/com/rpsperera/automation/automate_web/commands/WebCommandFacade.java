@@ -1,6 +1,5 @@
 package com.rpsperera.automation.automate_web.commands;
 
-import com.rpsperera.automation.automate_common.command_base.SelectWindow;
 import com.rpsperera.automation.automate_common.enums.Browser;
 import com.rpsperera.automation.automate_common.enums.Command;
 import com.rpsperera.automation.automate_web.driver.DriverManager;
@@ -80,8 +79,8 @@ public abstract class WebCommandFacade implements AutoCloseable {
         return WebDriverFunctionProvider.provide(Command.IS_ENABLED, WebIsEnabled.class).withDriver(this.webDriver).exitHandler(this::close);
     }
 
-    protected WebTakeScreenShot takesScreenshot() throws Exception {
-        return WebDriverFunctionProvider.provide(Command.TAKE_SCREENSHOT, WebTakeScreenShot.class).withDriver(this.webDriver).exitHandler(this::close);
+    protected WebScreenCapture takesScreenshot() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.TAKE_SCREENSHOT, WebScreenCapture.class).withDriver(this.webDriver).exitHandler(this::close);
     }
 
     protected WebGetAttribute getAttribute() throws Exception {
