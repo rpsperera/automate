@@ -14,11 +14,12 @@ import com.rpsperera.automation.automate_common.util.Retry;
 public class WebGetTitle extends WCommandBase<WebGetTitle> implements GetTitle<WebGetTitle> {
     @Retry
     @Override
-    public void getTitle() throws AutomateException {
+    public String getTitle() throws AutomateException {
         try {
-            this.webDriver.getTitle();
+            return this.webDriver.getTitle();
         } catch (Exception e) {
             ExceptionUtils.generateAndThrowCommandException(e, Command.GET_TITLE);
         }
+        return null;
     }
 }
