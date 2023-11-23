@@ -9,9 +9,36 @@ import com.rpsperera.automation.automate_common.util.Retry;
 public class WebSelectPopup extends WCommandBase<WebSelectPopup> implements SelectPopup<WebSelectPopup>  {
 	@Retry
     @Override
-    public void selectPopup() throws AutomateException {
+    public void acceptPopup() throws AutomateException {
         try {
-            this.webDriver.switchTo().alert();
+            this.webDriver.switchTo().alert().accept();
+        } catch (Exception e) {
+            ExceptionUtils.generateAndThrowCommandException(e, Command.SELECT_POPUP);
+        }
+    }
+    @Retry
+    @Override
+    public void dismissPopup() throws AutomateException {
+        try {
+            this.webDriver.switchTo().alert().dismiss();
+        } catch (Exception e) {
+            ExceptionUtils.generateAndThrowCommandException(e, Command.SELECT_POPUP);
+        }
+    }
+    @Retry
+    @Override
+    public void getTextPopup() throws AutomateException {
+        try {
+            this.webDriver.switchTo().alert().getText();
+        } catch (Exception e) {
+            ExceptionUtils.generateAndThrowCommandException(e, Command.SELECT_POPUP);
+        }
+    }
+    @Retry
+    @Override
+    public void sendKeysPopup(String stringToSend) throws AutomateException {
+        try {
+            this.webDriver.switchTo().alert().sendKeys(stringToSend);
         } catch (Exception e) {
             ExceptionUtils.generateAndThrowCommandException(e, Command.SELECT_POPUP);
         }
