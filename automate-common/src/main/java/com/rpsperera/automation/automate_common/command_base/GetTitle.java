@@ -6,7 +6,7 @@ import com.rpsperera.automation.automate_common.exception.InvalidParadigmExcepti
 import static com.rpsperera.automation.automate_common.util.Constants.COMMAND_NOT_IMPLEMENTED_FOR_CURRENT_PARADIGM;
 
 public interface GetTitle<T> extends Command<T> {
-    default void getTitle() throws AutomateException {
+    default String getTitle() throws AutomateException {
         throw new InvalidParadigmException(COMMAND_NOT_IMPLEMENTED_FOR_CURRENT_PARADIGM);
     }
 }
