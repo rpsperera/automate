@@ -11,6 +11,8 @@ import com.rpsperera.automation.automate_common.util.Mapper;
 import org.apache.http.client.utils.URIBuilder;
 
 import java.io.IOException;
+import java.net.Authenticator;
+import java.net.PasswordAuthentication;
 import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -35,6 +37,8 @@ public abstract class APIBase<T> extends CommandBase<T> {
     protected HttpRequest.Builder request = HttpRequest.newBuilder();
     protected URIBuilder uriBuilder;
     protected HttpClient.Builder client = HttpClient.newBuilder();
+
+    private boolean initiated = false;
 
     protected T setUrl(String url) {
         this.url = url;
@@ -67,8 +71,19 @@ public abstract class APIBase<T> extends CommandBase<T> {
     }
 
     protected void reset() {
-        this.client = HttpClient.newBuilder();
-        this.request = HttpRequest.newBuilder();
+        if (initiated) {
+            this.client = HttpClient.newBuilder();
+            this.request = HttpRequest.newBuilder();
+        }
+    }
+
+    protected void setBasicAuth(String username, String password) {
+        this.client = this.client.authenticator(new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(username, password.toCharArray());
+            }
+        });
     }
 
     protected ResponseDTO send(HttpRequest request) throws IOException, InterruptedException {
@@ -81,8 +96,9 @@ public abstract class APIBase<T> extends CommandBase<T> {
     }
 
     protected boolean isSecure(String url) throws URISyntaxException, AutomateException {
+        this.initiated = true;
         if (Objects.nonNull(url)) {
-            return new URIBuilder(this.url).getScheme().equalsIgnoreCase("https");
+            return !new URIBuilder(this.url).getScheme().equalsIgnoreCase("https");
         } else {
             throw new AutomateException("URL cannot be empty");
         }
@@ -116,4 +132,5 @@ public abstract class APIBase<T> extends CommandBase<T> {
         }
     }
 
+    protected abstract ResponseDTO initAndSend() throws Exception;
 }

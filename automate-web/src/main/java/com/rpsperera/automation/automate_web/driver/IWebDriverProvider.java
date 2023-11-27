@@ -2,10 +2,13 @@ package com.rpsperera.automation.automate_web.driver;
 
 import com.rpsperera.automation.automate_common.enums.Browser;
 import com.rpsperera.automation.automate_web.commands.*;
+import org.openqa.selenium.WebDriver;
 
 public interface IWebDriverProvider {
 
     void setArguments(String... arguments);
+
+    WebDriver getWebDriver();
 
     WebOpen setBrowser(Browser browser) throws Exception;
 
@@ -28,4 +31,18 @@ public interface IWebDriverProvider {
     WebSelectFrame getSelectFrameCommand() throws Exception;
 
     WebSelect getSelectCommand() throws Exception;
+
+    WebIsSelected getIsSelectedCommand() throws Exception;
+    
+    WebSelectPopup getSelectPopupCommand() throws Exception;
+    
+    WebIsEnabled getIsEnabledCommand() throws Exception;
+
+    WebIsDisplayed getIsDisplayedCommand() throws Exception;
+    WebGetTitle getTitleCommand() throws Exception;
+
+    WebGetAttribute getAttributeCommand() throws Exception;
+
+    WebScreenCapture getISTakeScreenShotCommand() throws Exception;
+
 }

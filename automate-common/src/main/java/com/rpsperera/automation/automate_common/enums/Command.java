@@ -13,7 +13,18 @@ public enum Command {
     TYPE("type"),
     SELECT("select"),
     CHECK_ELEMENT_PRESENT("checkElementPresent"),
-    GET("get");
+    GET_TITLE("getTitle"),
+    GET("get"),
+    POST("post"),
+    TAKE_SCREENSHOT("TakesScreenshot"),
+    SELECT_POPUP("selectPopup"),
+    GET_ATTRIBUTE("getAttribute"),
+    IS_SELECTED("isSelected"),
+    IS_ENABLED("isEnabled"),
+    IS_DISPLAYED("isDisplayed"),
+    WINDOW_HANDLE("windowHandle"),
+    WINDOW_HANDLES("windowHandles"),
+    SWITCH_TO_WINDOW("switchToWindow");
 
     Command(String command) {
         this.command = command;

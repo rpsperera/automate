@@ -71,10 +71,54 @@ public abstract class WebCommandFacade implements AutoCloseable {
         return WebDriverFunctionProvider.provide(Command.SELECT, WebSelect.class).withDriver(this.webDriver).exitHandler(this::close);
     }
 
+    protected WebIsSelected isSelected() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.IS_SELECTED, WebIsSelected.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+
+    protected WebIsEnabled isEnabled() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.IS_ENABLED, WebIsEnabled.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+
+    protected WebScreenCapture takesScreenshot() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.TAKE_SCREENSHOT, WebScreenCapture.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+
+    protected WebGetAttribute getAttribute() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.GET_ATTRIBUTE, WebGetAttribute.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+
+    protected WebIsDisplayed isDisplayed() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.IS_DISPLAYED, WebIsDisplayed.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+    protected WebGetTitle getTitle() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.GET_TITLE, WebGetTitle.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+
+    protected WebSelectWindow getWindowHandle() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.WINDOW_HANDLE, WebSelectWindow.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+
+    protected WebSelectWindow getWindowHandles() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.WINDOW_HANDLES, WebSelectWindow.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+
+    protected WebSelectWindow switchToWindow() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.SWITCH_TO_WINDOW, WebSelectWindow.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+
+    protected WebSelectPopup selectPopup() throws Exception {
+        return WebDriverFunctionProvider.provide(Command.SELECT_POPUP, WebSelectPopup.class).withDriver(this.webDriver).exitHandler(this::close);
+    }
+
+    protected WebDriver driver() {
+        return this.webDriver;
+    }
+
     @Override
     public void close() {
         if (Objects.nonNull(this.driverManager)) {
             this.driverManager.quitDriver();
         }
     }
+
 }
