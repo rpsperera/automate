@@ -82,9 +82,68 @@ public class WebDriverProvider extends WebCommandFacade implements IWebDriverPro
     }
 
     @Override
+    @Log(command = Command.IS_SELECTED, paradigm = Paradigm.WEB)
+    public WebIsSelected getIsSelectedCommand() throws Exception {
+        return super.isSelected();
+    }
+
+    @Override
+    @Log(command = Command.IS_ENABLED, paradigm = Paradigm.WEB)
+    public WebIsEnabled getIsEnabledCommand() throws Exception {
+        return super.isEnabled();
+    }
+
+    @Override
+    @Log(command = Command.TAKE_SCREENSHOT, paradigm = Paradigm.WEB)
+    public WebScreenCapture getISTakeScreenShotCommand() throws Exception {
+        return super.takesScreenshot();
+    }
+
+    @Override
+    @Log(command = Command.IS_DISPLAYED, paradigm = Paradigm.WEB)
+    public WebIsDisplayed getIsDisplayedCommand() throws Exception {
+        return super.isDisplayed();
+    }
+
+    @Override
     @Log(command = Command.TYPE, paradigm = Paradigm.WEB)
     public WebType getTypeCommand() throws Exception {
         return super.type();
+    }
+
+    @Override
+    @Log(command = Command.GET_TITLE, paradigm = Paradigm.WEB)
+    public WebGetTitle getTitleCommand() throws Exception {
+        return super.getTitle();
+    }
+
+    @Override
+    @Log(command = Command.SELECT_POPUP, paradigm = Paradigm.WEB)
+    public WebSelectPopup getSelectPopupCommand() throws Exception {
+        return super.selectPopup();
+    }
+
+    @Override
+    @Log(command = Command.GET_ATTRIBUTE, paradigm = Paradigm.WEB)
+    public WebGetAttribute getAttributeCommand() throws Exception {
+        return super.getAttribute();
+    }
+    @Override
+    @Log(command = Command.WINDOW_HANDLE, paradigm = Paradigm.WEB)
+    public WebSelectWindow getWindowHandle() throws Exception {
+        return super.getWindowHandle();
+    }
+
+    @Override
+    @Log(command = Command.WINDOW_HANDLES, paradigm = Paradigm.WEB)
+    public WebSelectWindow getWindowHandles() throws Exception {
+        return super.getWindowHandles();
+    }
+
+    @Override
+    @Log(command = Command.SWITCH_TO_WINDOW, paradigm = Paradigm.WEB)
+    public WebSelectWindow switchToWindow() throws Exception {
+        return super.switchToWindow();
     }
 
     public WebDriver getWebDriver() {
