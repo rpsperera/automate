@@ -40,32 +40,32 @@ public abstract class APIBase<T> extends CommandBase<T> {
 
     private boolean initiated = false;
 
-    protected T setUrl(String url) {
+    public T setUrl(String url) {
         this.url = url;
         return (T) this;
     }
 
-    protected T setHeader(Map<String, String> headers) {
+    public T setHeader(Map<String, String> headers) {
         this.headers = headers;
         return (T) this;
     }
 
-    protected T setQueryParams(Map<String, String> queryParameters) {
+    public T setQueryParams(Map<String, String> queryParameters) {
         this.queryParameters = queryParameters;
         return (T) this;
     }
 
-    protected T setPathParameters(Map<String, String> pathParameters) {
+    public T setPathParameters(Map<String, String> pathParameters) {
         this.pathParameters = pathParameters;
         return (T) this;
     }
 
-    protected T setBody(Map<String, Object> data) throws Exception {
+    public T setBody(Map<String, Object> data) throws Exception {
         this.body = Mapper.getInstance().getObjectMapper().writeValueAsString(data);
         return (T) this;
     }
 
-    protected T setBody(String body) {
+    public T setBody(String body) {
         this.body = body;
         return (T) this;
     }
