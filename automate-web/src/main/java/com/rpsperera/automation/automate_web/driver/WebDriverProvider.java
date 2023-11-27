@@ -5,6 +5,7 @@ import com.rpsperera.automation.automate_common.enums.Command;
 import com.rpsperera.automation.automate_common.enums.Paradigm;
 import com.rpsperera.automation.automate_common.util.Log;
 import com.rpsperera.automation.automate_web.commands.*;
+import org.openqa.selenium.WebDriver;
 
 public class WebDriverProvider extends WebCommandFacade implements IWebDriverProvider {
 
@@ -84,5 +85,9 @@ public class WebDriverProvider extends WebCommandFacade implements IWebDriverPro
     @Log(command = Command.TYPE, paradigm = Paradigm.WEB)
     public WebType getTypeCommand() throws Exception {
         return super.type();
+    }
+
+    public WebDriver getWebDriver() {
+        return super.driver();
     }
 }

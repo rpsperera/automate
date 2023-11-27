@@ -13,7 +13,8 @@ public enum Command {
     TYPE("type"),
     SELECT("select"),
     CHECK_ELEMENT_PRESENT("checkElementPresent"),
-    GET("get");
+    GET("get"),
+    POST("post");
 
     Command(String command) {
         this.command = command;

@@ -1,5 +1,7 @@
 package com.rpsperera.automation.automate_common.dto;
 
+import io.restassured.path.json.JsonPath;
+import io.restassured.path.xml.XmlPath;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,6 +47,14 @@ public class ResponseDTO {
 
     public Object getData() {
         return data;
+    }
+
+    public JsonPath getDataAsJsonPath() {
+        return JsonPath.from(String.valueOf(this.data));
+    }
+
+    public XmlPath getDataAsXmlPath() {
+        return XmlPath.from(String.valueOf(this.data));
     }
 
     public void setData(Object data) {
