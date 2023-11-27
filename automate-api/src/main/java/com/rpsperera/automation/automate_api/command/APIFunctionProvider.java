@@ -12,6 +12,8 @@ public class APIFunctionProvider extends InstanceProvider {
         switch (command) {
             case GET:
                 return tClass.cast(new APIGet());
+            case POST:
+                return tClass.cast(new APIPost());
             default:
                 throw new NoSuchMethodException();
         }

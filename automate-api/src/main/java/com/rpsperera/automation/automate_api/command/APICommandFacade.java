@@ -8,4 +8,8 @@ public class APICommandFacade {
         return APIFunctionProvider.provide(Command.GET, APIGet.class);
     }
 
+    protected APIPost post() throws NoSuchMethodException {
+        return APIFunctionProvider.provide(Command.POST, APIPost.class);
+    }
+
 }
