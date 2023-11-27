@@ -5,6 +5,7 @@ import com.rpsperera.automation.automate_common.enums.Command;
 import com.rpsperera.automation.automate_common.enums.Paradigm;
 import com.rpsperera.automation.automate_common.util.Log;
 import com.rpsperera.automation.automate_web.commands.*;
+import org.openqa.selenium.WebDriver;
 
 public class WebDriverProvider extends WebCommandFacade implements IWebDriverProvider {
 
@@ -109,11 +110,13 @@ public class WebDriverProvider extends WebCommandFacade implements IWebDriverPro
     public WebType getTypeCommand() throws Exception {
         return super.type();
     }
+
     @Override
     @Log(command = Command.GET_TITLE, paradigm = Paradigm.WEB)
     public WebGetTitle getTitleCommand() throws Exception {
         return super.getTitle();
     }
+
     @Override
     @Log(command = Command.SELECT_POPUP, paradigm = Paradigm.WEB)
     public WebSelectPopup getSelectPopupCommand() throws Exception {
@@ -141,5 +144,9 @@ public class WebDriverProvider extends WebCommandFacade implements IWebDriverPro
     @Log(command = Command.SWITCH_TO_WINDOW, paradigm = Paradigm.WEB)
     public WebSelectWindow switchToWindow() throws Exception {
         return super.switchToWindow();
+    }
+
+    public WebDriver getWebDriver() {
+        return super.driver();
     }
 }

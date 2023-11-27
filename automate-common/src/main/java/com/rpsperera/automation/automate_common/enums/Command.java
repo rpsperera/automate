@@ -15,6 +15,7 @@ public enum Command {
     CHECK_ELEMENT_PRESENT("checkElementPresent"),
     GET_TITLE("getTitle"),
     GET("get"),
+    POST("post"),
     TAKE_SCREENSHOT("TakesScreenshot"),
     SELECT_POPUP("selectPopup"),
     GET_ATTRIBUTE("getAttribute"),

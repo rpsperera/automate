@@ -2,10 +2,13 @@ package com.rpsperera.automation.automate_web.driver;
 
 import com.rpsperera.automation.automate_common.enums.Browser;
 import com.rpsperera.automation.automate_web.commands.*;
+import org.openqa.selenium.WebDriver;
 
 public interface IWebDriverProvider {
 
     void setArguments(String... arguments);
+
+    WebDriver getWebDriver();
 
     WebOpen setBrowser(Browser browser) throws Exception;
 
