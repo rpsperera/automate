@@ -5,8 +5,19 @@ import com.rpsperera.automation.automate_common.enums.Command;
 import com.rpsperera.automation.automate_common.exception.AutomateException;
 import com.rpsperera.automation.automate_common.util.ExceptionUtils;
 import com.rpsperera.automation.automate_common.util.Retry;
+import org.openqa.selenium.Alert;
 
 public class WebSelectPopup extends WCommandBase<WebSelectPopup> implements SelectPopup<WebSelectPopup>  {
+    @Retry
+    @Override
+    public Alert selectPop() throws AutomateException {
+        try {
+            return this.webDriver.switchTo().alert();
+        } catch (Exception e) {
+            ExceptionUtils.generateAndThrowCommandException(e, Command.SELECT_POPUP);
+        }
+        return null;
+    }
 	@Retry
     @Override
     public void acceptPopup() throws AutomateException {
@@ -27,12 +38,13 @@ public class WebSelectPopup extends WCommandBase<WebSelectPopup> implements Sele
     }
     @Retry
     @Override
-    public void getTextPopup() throws AutomateException {
+    public String getTextPopup() throws AutomateException {
         try {
-            this.webDriver.switchTo().alert().getText();
+            return this.webDriver.switchTo().alert().getText();
         } catch (Exception e) {
             ExceptionUtils.generateAndThrowCommandException(e, Command.SELECT_POPUP);
         }
+        return "";
     }
     @Retry
     @Override
