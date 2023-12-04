@@ -1,9 +1,6 @@
 package com.rpsperera.automation.automate_api.driver;
 
-import com.rpsperera.automation.automate_api.command.APICommandFacade;
-import com.rpsperera.automation.automate_api.command.APIGet;
-import com.rpsperera.automation.automate_api.command.APIPost;
-import com.rpsperera.automation.automate_api.command.APIUpdate;
+import com.rpsperera.automation.automate_api.command.*;
 import com.rpsperera.automation.automate_common.enums.Command;
 import com.rpsperera.automation.automate_common.enums.Paradigm;
 import com.rpsperera.automation.automate_common.util.Log;
@@ -27,6 +24,10 @@ public class APIDriverProvider extends APICommandFacade implements IAPIDriverPro
     @Override
     public APIUpdate updateCommand() throws Exception {
         return super.update();
+    }
+    @Override
+    public APIDelete deleteCommand() throws Exception {
+        return super.delete();
     }
 
 
