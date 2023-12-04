@@ -16,6 +16,8 @@ public class APIFunctionProvider extends InstanceProvider {
                 return tClass.cast(new APIPost());
             case UPDATE:
                 return tClass.cast(new APIUpdate());
+            case DELETE:
+                return tClass.cast(new APIDelete());
             default:
                 throw new NoSuchMethodException();
         }

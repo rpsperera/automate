@@ -15,5 +15,8 @@ public class APICommandFacade {
     protected APIUpdate update() throws NoSuchMethodException {
         return APIFunctionProvider.provide(Command.UPDATE, APIUpdate.class);
     }
+    protected APIDelete delete() throws NoSuchMethodException {
+        return APIFunctionProvider.provide(Command.DELETE, APIDelete.class);
+    }
 
 }
