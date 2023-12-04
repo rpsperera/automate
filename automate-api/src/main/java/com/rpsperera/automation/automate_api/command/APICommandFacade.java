@@ -12,4 +12,8 @@ public class APICommandFacade {
         return APIFunctionProvider.provide(Command.POST, APIPost.class);
     }
 
+    protected APIUpdate update() throws NoSuchMethodException {
+        return APIFunctionProvider.provide(Command.UPDATE, APIUpdate.class);
+    }
+
 }

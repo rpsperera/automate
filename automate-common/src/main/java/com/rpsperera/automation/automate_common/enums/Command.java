@@ -16,6 +16,7 @@ public enum Command {
     GET_TITLE("getTitle"),
     GET("get"),
     POST("post"),
+    UPDATE("update"),
     TAKE_SCREENSHOT("TakesScreenshot"),
     SELECT_POPUP("selectPopup"),
     GET_ATTRIBUTE("getAttribute"),
