@@ -14,6 +14,8 @@ public class APIFunctionProvider extends InstanceProvider {
                 return tClass.cast(new APIGet());
             case POST:
                 return tClass.cast(new APIPost());
+            case UPDATE:
+                return tClass.cast(new APIUpdate());
             default:
                 throw new NoSuchMethodException();
         }
