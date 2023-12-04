@@ -1,5 +1,6 @@
 package com.rpsperera.automation.automate_api.command;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rpsperera.automation.automate_api.util.SSLContextUtils;
 import com.rpsperera.automation.automate_api.util.TrustManagerHolder;
 import com.rpsperera.automation.automate_api.util.TrustUtils;
@@ -8,8 +9,10 @@ import com.rpsperera.automation.automate_common.dto.ResponseDTO;
 import com.rpsperera.automation.automate_common.exception.AutomateException;
 import com.rpsperera.automation.automate_common.util.ExceptionUtils;
 import com.rpsperera.automation.automate_common.util.Mapper;
+import netscape.javascript.JSObject;
 import org.apache.http.client.utils.URIBuilder;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.Authenticator;
 import java.net.PasswordAuthentication;
@@ -67,6 +70,24 @@ public abstract class APIBase<T> extends CommandBase<T> {
 
     public T setBody(String body) {
         this.body = body;
+        return (T) this;
+    }
+
+    public T setBody(Object ob) throws Exception {
+        this.body = Mapper.getInstance().getObjectMapper().writeValueAsString(ob);
+        return (T) this;
+    }
+
+    public T setBody(JSObject jsObject) throws Exception {
+        this.body = Mapper.getInstance().getObjectMapper().writer().withDefaultPrettyPrinter().writeValueAsString(jsObject);
+        return (T) this;
+    }
+
+    public T setBody(File file) throws Exception {
+        ObjectMapper objectMapper = Mapper.getInstance().getObjectMapper();
+        Object ob = new Object();
+        objectMapper.writeValue(file, ob);
+        this.body = objectMapper.writeValueAsString(ob);
         return (T) this;
     }
 
